@@ -3,7 +3,7 @@
 <table>
   <thead>
     <th>Title</th>
-    <th>Deescription</th>
+    <th>Description</th>
     <th>Action</th>
   </thead>
   <body>
@@ -11,7 +11,7 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.description %></td>
-      <td><%= link_to "show article" %></td>
+      <td><%= link_to "show article", @article %></td>
     </tr>
     <% end %>
   </body>
