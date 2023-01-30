@@ -11,7 +11,11 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.description %></td>
-      <td><%= link_to "show article", @article %></td>
+      <td>
+        <%= link_to "show", article %>
+        <%= link_to "edit", edit_article_path(article) %>
+        <%= link_to "delete", article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>      
+      </td>
     </tr>
     <% end %>
   </body>

@@ -3,3 +3,4 @@
 <p><%= @article.title %></p>
 <p>DESCRIPTION:</p>
 <p><%= @article.description %></p>
+<p><%= link_to "delete", @article, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
