@@ -1,3 +1,80 @@
 .navbar {
-  background-color: #ca963b !important;
+  background-color: #29B37E !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  color: white !important;
+}
+
+#home-container {
+  margin-top: 25px;
+}
+
+.jumbotron {
+  background-image: url('/assets/lights.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#Sign-up-button {
+  background-color: #29B37E;
+  border-color: #29B37E;
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  background-color: #29B37E;
+}
+
+.card-header {
+  background-color: #29b37e93 !important;
+}
+
+.card-footer {
+  background-color: #29b37e2f !important;
+}
+
+
+.btn-outline-primary{
+  border-color: #29B37E;
+  color: #29B37E;
+}
+.btn-outline-primary:hover {
+    background-color: #29b37e;
+    border-color: #29B37E;
+}
+
+.btn-outline-secondary{
+  border-color: white;
+  color: white;
+}
+.btn-outline-secondary:hover {
+    background-color: #29b37e;
+    border-color: #29B37E;
+}
+
+.form-background {
+  background-color: #3dd299;
+}
+
+.link {
+  color: #29B37E;
+}
+.link:hover {
+  color: #3dd299;
+  text-decoration: solid;
 }
