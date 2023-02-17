@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "Your account information was succesfully updated"
-      redirect_to articles_path
+      redirect_to @user
     else
       render :edit, status: :unprocessable_entity
     end
