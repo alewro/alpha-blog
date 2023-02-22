@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_user, only: [:edit, :update]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def show
     @articles = @user.articles.paginate(page: params[:page], per_page: 5)
@@ -36,6 +36,13 @@ class UsersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "You have successfully deleted your profile"
+    redirect_to root_path
   end
 
   private
