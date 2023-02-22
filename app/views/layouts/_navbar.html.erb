@@ -16,15 +16,20 @@
         <div class="dropdown-menu">
           <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>
           <%= link_to "View articles", articles_path, class: "dropdown-item" %>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+          Account
+        </a>
+        <div class="dropdown-menu">
+          <% if logged_in? %>
+            <%= link_to current_user.username, user_path(current_user), class: "dropdown-item" %>
+            <%= link_to "Log out", logout_path, data: { turbo_method: :delete, turbo_confirm: "You sure you want to log out?" }, class: "dropdown-item" %>
+          <% else %>
+            <%= link_to "Sign up", signup_path, class: "dropdown-item" %>
+            <%= link_to "Log in", login_path, class: "dropdown-item" %>        
+          <% end %>
         </div>
-      </li>
-      <li class="nav-item">
-         <%= link_to "Log in", login_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-         <%= link_to "Log out", logout_path, data: { turbo_method: :delete, turbo_confirm: "You sure you want to log out?" }, class: "nav-link" %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
