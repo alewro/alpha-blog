@@ -3,9 +3,9 @@
   <%= will_paginate @users, :container => false %>
 </div>
 <div class="container" id="articles-container">
-  <% @users.each do |user| %>
-    <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
+  <div class="row justify-content-md-center">
+    <% @users.each do |user| %>
+      <div class="col-12 col-md-6 col-lg-4 mt-4 d-flex justify-content-center">
         <div class="card text-center shadow-sm mb-5 bg-white rounded">
           <div class="card-header font-italic bg-info">
             <%= link_to user.username, user, class: "text-dark" %>
@@ -28,8 +28,8 @@
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <div class= "apple_pagination mb-4">
   <%= will_paginate @users, :container => false %>
