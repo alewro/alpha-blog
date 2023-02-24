@@ -22,37 +22,6 @@ body {
   background-color: #29b37e2f !important;
 }
 
-
-.btn-outline-primary{
-  border-color: #29B37E;
-  color: #29B37E;
-}
-.btn-outline-primary:hover {
-    background-color: #29b37e;
-    border-color: #29B37E;
-}
-
-.btn-outline-secondary{
-  border-color: white;
-  color: white;
-}
-.btn-outline-secondary:hover {
-    background-color: #29b37e;
-    border-color: #29B37E;
-}
-
-.form-background {
-  background-color: #3dd299;
-}
-
-.link {
-  color: #29B37E;
-}
-.link:hover {
-  color: #3dd299;
-  text-decoration: solid;
-}
-
 .apple_pagination {
   text-align: center;
   padding: 1em;
