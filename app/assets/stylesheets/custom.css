@@ -14,14 +14,6 @@ body {
   flex: 1 0 auto;
 }
 
-.card-header {
-  background-color: #29b37e93 !important;
-}
-
-.card-footer {
-  background-color: #29b37e2f !important;
-}
-
 .apple_pagination {
   text-align: center;
   padding: 1em;
@@ -33,7 +25,7 @@ body {
   .apple_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background-color: #bebebe;
+    background-color: #17a3b88b;
     display: inline-block;
     width: 1.4em;
     height: 1.4em;
