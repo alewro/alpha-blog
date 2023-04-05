@@ -3,23 +3,23 @@
   <%= will_paginate @users, :container => false %>
 </div>
 <div class="container" id="articles-container">
-  <% @users.each do |user| %>
-    <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
+  <div class="row justify-content-md-center">
+    <% @users.each do |user| %>
+      <div class="col-12 col-md-6 col-lg-4 mt-4 d-flex justify-content-center">
         <div class="card text-center shadow-sm mb-5 bg-white rounded">
-          <div class="card-header font-italic">
-            <%= link_to user.username, user %>
+          <div class="card-header font-italic bg-info">
+            <%= link_to user.username, user, class: "text-dark" %>
           </div>
           <div class="card-body ">
             <h5 class="card-title"><%= link_to gravatar_for(user, size: 150), user %></h5>
             <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
-            <%= link_to "show profile", user, class:"btn btn-outline-primary" %>
+            <%= link_to "show profile", user, class:"btn btn-outline-info" %>
              <% if logged_in? %>
               <% if user == current_user %>
-                <%= link_to "edit profile", edit_user_path(user), class:"btn btn-outline-primary" %>
+                <%= link_to "edit profile", edit_user_path(user), class:"btn btn-outline-info" %>
               <% end %>
               <% if current_user.admin? %>
-                <%= link_to "Delete user", user_path(user), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete a user?" }, class: "btn btn-outline-primary" %>
+                <%= link_to "Delete user", user_path(user), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete a user?" }, class: "btn btn-outline-info" %>
               <% end %>
             <% end %>
           </div>
@@ -28,8 +28,8 @@
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <div class= "apple_pagination mb-4">
   <%= will_paginate @users, :container => false %>

@@ -1,18 +1,18 @@
-<div class="container" id="articles-container">
-  <% @articles.each do |article| %>
-    <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
+<div class="container">
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-12 col-md-6 col-lg-4 mt-4 d-flex ">
         <div class="card text-center shadow-sm mb-5 bg-white rounded">
-          <div class="card-header font-italic">
-            by <%= link_to article.user.username, user_path(article.user) %>
+          <div class="card-header font-italic bg-info">
+            by <%= link_to article.user.username, user_path(article.user), class: "text-dark"%>
           </div>
           <div class="card-body ">
             <h5 class="card-title"><%= article.title %></h5>
             <p class="card-text"><%= truncate(article.description, length: 100) %></p>
-            <%= link_to "show", article, class:"btn btn-outline-primary" %>
+            <%= link_to "show", article, class:"btn btn-outline-info" %>
             <% if logged_in? && (article.user == current_user || current_user.admin?) %>
-              <%= link_to "edit", edit_article_path(article), class:"btn btn-outline-primary" %>
-              <%= link_to "delete", article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"btn btn-outline-primary" %>
+              <%= link_to "edit", edit_article_path(article), class:"btn btn-outline-info" %>
+              <%= link_to "delete", article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:"btn btn-outline-info" %>
             <% end %>
           </div>
           <div class="card-footer text-muted">
@@ -20,6 +20,6 @@
           </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
