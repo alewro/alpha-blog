@@ -1,5 +1,8 @@
 <h1 class="text-center mt-4">Categories</h1>
 
+<div class= "apple_pagination">
+  <%= will_paginate @categories, :container => false %>
+</div>
 <div class="container">
   <div class="row">
     <% @categories.each do |category| %>
